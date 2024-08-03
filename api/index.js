@@ -3,8 +3,10 @@ import { connect } from "./connectDb.js";
 import userRoute from "./routes/userRoute.js";
 import authRoute from "./routes/authRoute.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
+import cors from "cors";
 const app = express();
 app.use(express.json());
+app.use(cors());
 const PORT = 3000;
 
 connect(); //function to connect to mongo db
