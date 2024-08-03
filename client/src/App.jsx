@@ -4,9 +4,11 @@ import Profile from "./pages/Profile";
 import Singup from "./pages/Singup";
 import Signin from "./pages/Signin";
 import About from "./pages/About";
+import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
