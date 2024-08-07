@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-const Singup = () => {
+const Signup = () => {
   const [formdata, setFormData] = useState({});
 
   const handleChange = (e) => {
@@ -56,4 +56,4 @@ const Singup = () => {
   );
 };
 
-export default Singup;
+export default Signup;
