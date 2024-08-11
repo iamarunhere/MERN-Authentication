@@ -5,13 +5,16 @@ import {
   signInStart,
   signInFailure,
   signInSuccess,
+  selectError,
 } from "../redux/user/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import OAuth from "../components/OAuth";
+
 axios.defaults.withCredentials = true;
 
 const Signin = () => {
   const [formdata, setFormData] = useState({});
-  const { error } = useSelector((state) => state.user);
+  const { error } = useSelector(selectError) || {};
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -59,6 +62,7 @@ const Signin = () => {
         >
           Sign In
         </button>
+        <OAuth />
       </form>
       <div className="flex gap-2 mt-5">
         <p>Dont Have an account?</p>
