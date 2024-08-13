@@ -5,7 +5,11 @@ import authRoute from "./routes/authRoute.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import path from "path";
+
 const app = express();
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "/client/dist")));
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -20,6 +24,9 @@ connect(); //function to connect to mongo db
 
 app.use("/api/user/", userRoute);
 app.use("/api/auth/", authRoute);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 app.use(errorHandler);
 app.listen(PORT, () => console.log(`server is running on ${PORT}`));
