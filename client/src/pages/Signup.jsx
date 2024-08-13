@@ -11,7 +11,10 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/api/auth/signup", formdata)
+      .post(
+        "https://mern-authentication-3qy1.onrender.com/api/auth/signup",
+        formdata
+      )
       .then((res) => res.json())
       .catch((error) => error.message);
   };

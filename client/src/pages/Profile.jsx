@@ -62,7 +62,7 @@ const Profile = () => {
     dispatch(updateUserStart());
     try {
       const res = await fetch(
-        `http://localhost:3000/api/user/update/${currentUser._id}`,
+        `https://mern-authentication-3qy1.onrender.com/api/user/update/${currentUser._id}`,
 
         {
           method: "POST",
@@ -87,7 +87,7 @@ const Profile = () => {
     try {
       dispatch(deleteUserStart);
       const res = await fetch(
-        `http://localhost:3000/api/user/delete/${currentUser._id}`,
+        `https://mern-authentication-3qy1.onrender.com/api/user/delete/${currentUser._id}`,
         {
           method: "DELETE",
           credentials: "include",
