@@ -4,8 +4,10 @@ import userRoute from "./routes/userRoute.js";
 import authRoute from "./routes/authRoute.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 app.use(
   cors({
     origin: "http://localhost:5173",
