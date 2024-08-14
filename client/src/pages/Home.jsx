@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div className="px-4 py-12 max-w-2xl mx-auto">
@@ -16,6 +17,14 @@ export default function Home() {
         Express, and uses MongoDB as the database. Authentication is implemented
         using JSON Web Tokens (JWT).
       </p>
+      <p className="mb-4 text-blue-800">
+        Kindly click the Sign in button to experience full functionality
+      </p>
+      <Link to="/profile">
+        <button className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95">
+          Sign in
+        </button>
+      </Link>
     </div>
   );
 }
